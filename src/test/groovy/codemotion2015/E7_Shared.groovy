@@ -5,8 +5,12 @@ import spock.lang.Specification
 
 class E7_Shared extends Specification {
 
-    @Shared
+//    @Shared
     def person = new Person('Iván', 'López')
+
+//    def setupSpec(){
+//        def person = new Person('Iván', 'López')
+//    }
 
     void 'should get name'() {
         given:

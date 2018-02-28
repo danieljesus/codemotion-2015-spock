@@ -10,5 +10,16 @@ class E4_Exceptions extends Specification {
 
         then:
             thrown NumberFormatException
+
+//            def e = thrown NumberFormatException
+//            e.message == 'For input string: "foo"'
+    }
+
+    void 'should not throw an exception'() {
+        when:
+        Long.valueOf("123")
+
+        then:
+            notThrown(NumberFormatException)
     }
 }

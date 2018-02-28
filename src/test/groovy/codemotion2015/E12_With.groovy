@@ -13,7 +13,6 @@ class E12_With extends Specification {
                 name == 'Iván'
                 lastName == 'López'
             }
-
     }
 
 }

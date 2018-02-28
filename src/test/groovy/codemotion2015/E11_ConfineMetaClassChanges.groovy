@@ -14,6 +14,15 @@ class E11_ConfineMetaClassChanges extends Specification {
             "Codemotion".sayHi() == 'Hi Codemotion'
     }
 
+//    @ConfineMetaClassChanges(String)
+    void 'should have sayHi method on String II'() {
+        given:
+        String.metaClass.sayHi = { -> "Hi ${delegate}" }
+
+        expect:
+        "Codemotion".sayHi() == 'Hi Codemotion'
+    }
+
     void 'should not have sayHi method on String'() {
         when:
             "Codemotion".sayHi()

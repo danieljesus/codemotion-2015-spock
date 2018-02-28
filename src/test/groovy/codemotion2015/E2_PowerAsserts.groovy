@@ -1,11 +1,13 @@
 package codemotion2015
 
 import spock.lang.Ignore
+import spock.lang.IgnoreRest
 import spock.lang.Specification
 
 @Ignore("Comment this annotation to check the errors")
 class E2_PowerAsserts extends Specification {
 
+    //@IgnoreRest
     void 'should fail with string'() {
         expect:
             'Hello Codemotion!'.reverse() == 'ointmodeoC olleH'

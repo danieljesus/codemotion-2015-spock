@@ -61,6 +61,7 @@ class E5_Data_driven extends Specification {
     void 'should read data from an iterable'() {
         given:
             def person = [name: theName, lastName: theLastName] as Person
+//            def person = ['name': theName, lastName: theLastName] as Person
 
         expect:
             person instanceof Person

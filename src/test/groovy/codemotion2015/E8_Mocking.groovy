@@ -1,6 +1,7 @@
 package codemotion2015
 
 import spock.lang.Specification
+import spock.lang.Unroll
 
 class E8_Mocking extends Specification {
 
@@ -60,4 +61,18 @@ class E8_Mocking extends Specification {
             1 * mockedNotificationService.sendNotification(person, 'msg3')
     }
 
+
+    void 'should check the order II'() {
+        given:
+            def person = new Person('Iván', 'López')
+            def mockedNotificationService = Mock(NotificationService)
+        when:
+            mockedNotificationService.sendNotification(person, message)
+
+        then:
+            1 * mockedNotificationService.sendNotification(person, message)
+        where:
+             message << ['msg1', 'msg2','msg3']
+
+    }
 }

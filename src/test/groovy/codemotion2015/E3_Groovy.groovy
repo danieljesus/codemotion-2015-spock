@@ -22,6 +22,12 @@ class E3_Groovy extends Specification {
         then:
             persons.size() == 4
             persons.name == ['Sheldon', 'Leonard', 'Rajesh', 'Howard']
+
+//            println persons.name
+//            println persons*.name
+//            println persons.collect { it.name }
+//            println persons.collect { Person p -> p.name }
+
             persons.name.sort() == ['Howard', 'Leonard', 'Rajesh', 'Sheldon']
             persons.lastName.collect { it.size() } == [6, 10, 12, 8]
             persons.name.min { it.length() } == 'Rajesh'

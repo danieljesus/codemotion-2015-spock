@@ -2,6 +2,7 @@ package codemotion2015
 
 import spock.lang.Specification
 
+//https://www.youtube.com/watch?v=a7Sf_cfM9EY
 class E1_Basic extends Specification {
 
     void 'should reverse a string'() {

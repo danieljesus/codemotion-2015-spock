@@ -1,6 +1,7 @@
 package codemotion2015
 
 import spock.lang.Specification
+import spock.lang.Unroll
 
 class E9_Stubbing extends Specification {
 
@@ -18,10 +19,11 @@ class E9_Stubbing extends Specification {
             person.lastName == 'Doe'
     }
 
+    //TODO Try to do it with wherek
     void 'should return different values in every call'() {
         given:
             def stubbedRepository = Stub(PersonRepository) {
-                findById(_) >>> [
+                findById(_ ) >>> [
                     new Person('John', 'Doe'),
                     new Person('Jane', 'Doe')
                 ]
@@ -31,11 +33,13 @@ class E9_Stubbing extends Specification {
             def person1 = stubbedRepository.findById(1)
             def person2 = stubbedRepository.findById(1)
             def person3 = stubbedRepository.findById(1)
+//            def person4 = stubbedRepository.findById(1)
 
         then:
             person1.name == 'John'
             person2.name == 'Jane'
             person3.name == 'Jane'
+//            person4.name == 'Jane'
     }
 
     void 'should return values depending the parameters'() {
